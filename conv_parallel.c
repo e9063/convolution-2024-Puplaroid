@@ -20,7 +20,7 @@ int main() {
 
     int *R = malloc(sizeof(int) * lenR);
 
-
+    #pragma omp parallel for schedule(static) num_threads(4)
     for (int i = 0; i < lenR; i++) {
         int sum = 0;
         for (int j = 0; j < NF; j++) {
