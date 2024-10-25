@@ -8,11 +8,11 @@ int main() {
 
     int *A = malloc(sizeof(int) * NA);
     int *F = malloc(sizeof(int) * NF);
-    #pragma omp parallel for
+    #pragma omp parallel for schedule(dynamic) num_threads(4)
     for (int i = 0; i < NA; i++) {
         scanf("%d", &A[i]);
     }
-    #pragma omp parallel for
+    #pragma omp parallel for schedule(dynamic) num_threads(4)
     for (int i = 0; i < NF; i++) {
         scanf("%d", &F[i]);
     }
